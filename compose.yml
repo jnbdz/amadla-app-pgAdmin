@@ -1,0 +1,16 @@
+---
+version: '3'
+volumes:
+  apereo_cas:
+services:
+  pgadmin: # Doc: https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html#examples
+    image: docker.io/dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=user@domain.com
+      - PGADMIN_DEFAULT_PASSWORD=SuperSecret
+      - PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION=True
+      - PGADMIN_LISTEN_PORT=5050
+    ports:
+      - 5050:5050
+    depends_on:
+      - "postgres"
