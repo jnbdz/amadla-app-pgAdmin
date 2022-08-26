@@ -1,0 +1,22 @@
+---
+version: 1
+module:
+  description: pgAdmin - Tool to manage Postgres DBs.
+  authors:
+    - Jean-Nicolas Boulay (JN) <https://jean-nicolas.name>
+  category: Application
+  tags:
+    - database
+    - postgres
+    - db
+    - storage
+  configuration:
+    network:
+      private:
+        entries:
+          - location: /pgadmin
+            ports:
+              - internal: 5050
+                external: 80
+              - internal: 5050
+                external: 443
